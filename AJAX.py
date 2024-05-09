@@ -37,12 +37,18 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 st.title("AJAX - A Health Assistant")
 
+from joblib import load
 
+diabetes_model = load(os.path.join(working_dir, 'diabetes_model.sav'))
+heart_disease_model = load(os.path.join(working_dir, 'heart_disease_model.sav'))
+parkinsons_model = load(os.path.join(working_dir, 'parkinsons_model.sav'))
+
+"""
 working_dir = os.path.dirname(os.path.abspath(__file__))
 diabetes_model = pickle.load(open(os.path.join(working_dir, 'diabetes_model.sav'), 'rb'))
 heart_disease_model = pickle.load(open(os.path.join(working_dir, 'heart_disease_model.sav'), 'rb'))
 parkinsons_model = pickle.load(open(os.path.join(working_dir, 'parkinsons_model.sav'), 'rb'))
-
+"""
 def main():
 
     menu = ["Home", "Diabetes Prediction", "Heart Disease Prediction", "Parkinson's Prediction"]
