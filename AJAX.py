@@ -37,6 +37,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 st.title("AJAX - A Health Assistant")
 
+working_dir = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(working_dir, 'diabetes_model.sav'), 'rb') as f:
     diabetes_model = pickle.load(f)
 
